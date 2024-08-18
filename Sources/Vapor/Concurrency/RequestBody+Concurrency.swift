@@ -31,7 +31,7 @@ extension Request.Body {
                 // We can just return here to sign to the producer that we want more data
                 break
             case .noSignalReceived:
-                preconditionFailure()
+                break
             case .waitingForSignalFromConsumer(let promise):
                 self._state = .noSignalReceived
                 promise.succeed(())
